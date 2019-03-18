@@ -1,0 +1,38 @@
+.parrafo{
+    margin: auto;
+    width: 90%;
+    text-align: justify;
+    font-size: 18px;
+}
+
+body{
+    
+    background:#EEEEEE;
+}
+.parrafo1{
+    font-size: 20px;
+    margin: auto;
+    width: 60%;
+    text-align: justify;
+}
+img{
+    display: block;
+    width: 100%;
+    margin: auto;
+    height: 300px;
+}
+h1{
+   
+    text-align: center;
+}
+.p-image{
+    padding: 3%;
+    background: white;
+    margin: auto;
+    width: 60%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    
+}
+
+html{ position: relative;}
