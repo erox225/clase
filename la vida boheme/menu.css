@@ -1,0 +1,150 @@
+nav a{
+   font-size: 40px;
+     font-family: 'Sniglet', cursive;
+    color: rgb(255, 244, 227); 
+}
+#nav {
+
+ width: 60%;
+    
+    display: flex;
+   justify-content:space-around;
+    padding: 10px;
+}
+#nav_2 input[type='text']{
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+    padding: 2%;
+   display: block;
+    width: 70%;
+   
+     color: rgb(255, 244, 227);
+    border:none;
+   border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    
+}
+#nav_1{
+    width: 60%;
+}
+#nav_2{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+#centrado{
+    width: 60%;
+    display: flex;
+    margin: auto;
+    height: 70%;
+}
+#tres{
+   
+    align-content: center;
+}
+.listado{
+    justify-content: space-between;
+    align-items: center;
+     background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgb(255, 244, 227);
+    height: 100px;
+   
+}
+button a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+}
+div button{
+    background:  rgb(255, 244, 227);
+    font-weight: 800;
+    font-family: 'Sniglet', cursive;
+    display: block;
+    width: 20%;
+  
+    font-size: 25px;
+    padding: 1%;
+    
+}
+.listado img{
+    width: 20%;
+    height: 100%;
+    max-width: 150px;
+}
+.listado h4{
+     font-family: 'Sniglet', cursive;
+    color : rgb(255, 244, 227);
+    font-size: 2em;
+}
+@media screen and (max-width: 800px) {
+    div button{
+        font-size: 20px;
+    }
+    .listado{
+        justify-content: space-between;
+    }
+    
+    .listado img{
+        max-width: 120px;
+    }
+    #este{
+        display: none;
+    }
+    header{
+        width: 100%;
+    }
+    #nav{
+        margin: auto;
+        width: 100%;
+        
+    }
+    #nav_2{
+        width: 90%;
+        
+    }
+    div input[type='text']{
+ 
+    width: 80%;
+  
+    
+}
+    #centrado{
+        width: 100%;
+    }
+    #nav_1{
+       width: 20%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #este{
+        
+    }
+        header{
+        width: 100%;
+    }
+    #nav{
+        margin: auto;
+        width: 100%;
+        
+    }
+
+}
+
+@media screen and (max-width: 1500px) {
+    #este{
+       
+    }
+        header{
+        width: 100%;
+    }
+    #nav{
+        margin: auto;
+        width: 100%;
+        
+    }
+

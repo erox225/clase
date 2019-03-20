@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: inline;
+}
+
+/*++++++++++++++++++++++*/
+/*++++++++++++++++++++++*/
+#uno {
+    background: url(imagenes/dark_stripes.png);
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#uno #centro {
+    justify-content: center;
+    width: 90%;
+    margin: 8% auto;
+}
+
+#centro  a {
+text-decoration: none;
+}
+
+#uno #centro img {
+    display: block;
+    margin: auto;
+    margin-bottom: 2%;
+    width: 60%;
+    height: 40%;
+}
+
+#uno #centro p {
+    font-weight: 700;
+    font-size: 1.2em;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    color: rgb(255, 244, 227);
+    margin: auto;
+    width: 80%;
+    display: block;
+}
+
+
+
+/*++++++++++++++++++++++*/
+/*++++++++++++++++++++++*/
+#dos {
+    background-color: rgb(61, 50, 137);
+    height: 100%;
+    width: 100%;
+
+}
+
+#dos h2 {
+    font-size: 3em;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-family: 'Sniglet', cursive;
+    color: rgb(255, 244, 227);
+    padding-top: 100px;
+}
+
+#dos #canciones {
+    flex-wrap: wrap;
+    display: flex;
+    align-content: space-between;
+}
+
+
+/*++++++++++++++++++++++*/
+/*++++++++++++++++++++++*/
+#tres {
+    background: url(imagenes/wood_1.png);
+
+    height: 100%;
+    width: 100%;
+
+}
+
+#tres h2 {
+    font-size: 3em;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-family: 'Sniglet', cursive;
+    color: rgb(255, 244, 227);
+    padding-top: 100px;
+}
+
+/*++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++*/
+header {
+    list-style: none;
+    font-family: 'Sniglet', cursive;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+#logo{
+   border: 5px solid rgb(255, 244, 227);  
+    padding: 15px;
+    margin-right: 15px;
+     border-radius: 100px ;
+    font-size: 40px;
+}
+i{
+    
+     font-family: 'Sniglet', cursive;
+    color: rgb(255, 244, 227);
+}
+#nav {
+    margin: auto;
+    width: 70%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#nav li a {
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(255, 244, 227);
+}
+
+#logo {
+
+    background: url(walpaper.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++*/
+#notengoheader {
+    display: block;
+    right: 5%;
+    top: 40%;
+    color: white;
+
+
+    position: fixed;
+    z-index: 100;
+}
+
+#notengoheader nav ul li:hover {
+    color: rgb(251, 195, 24);
+
+}
+
+#notengoheader nav ul li:active {
+    color: rgb(251, 195, 24);
+
+}
+
+#notengoheader nav ul li {
+    font-size: 20px;
+    font-family: 'Sniglet', cursive;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0px;
+    color: rgb(255, 244, 227);
+}
+
+#notengoheader nav ul li a {
+    font-size: 16px;
+    margin-left: 15px;
+
+}
+
+/*++++++++++++++++++++++*/

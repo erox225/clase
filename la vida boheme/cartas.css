@@ -1,0 +1,145 @@
+#tercero{
+    
+    display: flex;
+    justify-content: space-between;
+    margin: 1% auto;
+    width: 75%;
+    height: 30vh;
+    
+}
+
+#tercero > div{
+    transition:  0.7 ease;
+     transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    width: 23%;
+
+}
+
+#tercero >div:hover >.front{
+    
+    -webkit-transform:perspective(600px) rotateY(180deg);
+}
+
+#tercero >div:hover >.back{
+    
+   
+    -webkit-transform:perspective(600px) rotateY(0deg);
+}
+
+.front{
+-webkit-box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.87); 
+box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.87);
+    -webkit-visibility:hidden;
+    -webkit-transform:perspective(600px) rotateY(0deg);
+    transform:perspective(600px) rotateY(0deg);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    transition:transform .5s linear 0s;
+     backface-visibility: hidden;
+}
+
+.back{
+    overflow:hidden;
+     word-wrap: break-word;
+   
+   padding: 1.5%;
+     justify-content: center;
+   align-items: center;
+-webkit-box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.87); 
+box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.87);
+    -webkit-visibility:hidden;
+    -webkit-transform:perspective(600px) rotateY(180deg);
+    transform:perspective(600px) rotateY(180deg);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    transition:transform .5s linear 0s;
+    backface-visibility: hidden;
+}
+.back p{  word-wrap: break-word;
+    overflow: hidden;
+   font-family: 'Rock Salt', cursive;
+    color: rgb(255, 244, 227);
+        width: 80%;
+    display: block;
+    margin: auto;
+     font-weight: 800;
+}
+.back h1{
+    overflow: hidden;
+    text-align: center;
+     font-family: 'Sniglet', cursive;
+    color: rgb(255, 244, 227);
+}
+#back_uno{
+    background:#007369;
+}
+#back_dos{
+    background: #E84A5F;
+}
+#back_tres{
+    background: #282E33;
+}
+#back_cuatro{
+    background: #D6D8C9;
+    
+}
+#back_cuatro p{
+    color:black;
+    font-weight: 800;
+}
+#back_cuatro h1{
+    color:black;
+    font-weight: 800;
+}
+#back_cinco{
+    background: #F3ECE0;
+}
+#back_cinco p{
+    color:black;
+      font-weight: 800;
+}
+#back_cinco h1{
+    color:black;
+      font-weight: 800;
+}
+#back_cinco input{
+    border: 2px solid black;
+}
+#back_seis{
+    background: #997656;
+}
+#back_siete{
+    background: white;
+}
+#back_siete h1{
+    color:black;
+}
+#back_siete p{
+    color: black;
+}
+#back_ocho{
+    background: #384001;
+}
+.back a{
+    text-decoration: none;
+}
+.back input{
+    border: none;
+     font-size: 1.2em;
+    font-weight: 700;
+    padding: 0.5em 2.8em;
+    background-color:rgb(255, 244, 227);
+    display: block;
+   font-family: 'Sniglet', cursive;
+    color: black;
+    margin: 1.5% auto;
+    cursor: pointer;
+}
+.back input:hover{
+   background: black;
+    color:rgb(255, 244, 227);
+}
