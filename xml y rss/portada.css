@@ -1,0 +1,130 @@
+channel >title{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+     border: 1px solid black;
+    background: black;
+    color: white;
+    
+}
+
+channel >link{
+    display: block;
+    width: 80%;
+    margin: 0.2% auto;
+     border: 1px solid black;
+    padding: 1%;
+}
+
+channel >description{
+    display: block;
+    width: 80%;
+    margin: 0.2% auto;
+     border: 1px solid black;
+    padding: 1%;
+}
+
+channel >lastBuildDate{
+    display: block;
+    width: 80%;
+    margin: 0.2% auto;
+     border: 1px solid black;
+    padding: 1%;
+}
+
+channel >pubDate{
+    display: block;
+    width: 80%;
+    margin: 0.2% auto;
+ border: 1px solid black;
+    padding: 1%;
+}
+channel >language{
+       display: block;
+    width: 80%;
+    margin: 0.2% auto;
+     border: 1px solid black;
+    padding: 1%;
+}
+
+channel> copyright{
+         display: block;
+    width: 80%;
+    margin: 0.2% auto; 
+     border: 1px solid black;
+    padding: 1%;
+}
+
+channel > image{
+             display: block;
+    width: 80%;
+    margin: 0.2% auto; 
+     border: 1px solid black;
+    padding: 1%;
+}
+channel > ttl{
+    display: block;
+    width: 80%;
+    margin: 0.2% auto;
+    border: 1px solid black;
+    padding: 1%;
+}
+
+channel{
+    display: block;
+
+}
+
+item{
+    display: block;
+    margin: 1% auto;
+    border: 2px solid black;
+padding: 1%;    
+width: 80%;
+}
+
+item title{
+    font-size: 25px;
+    display: block;
+    width: 70%;
+    margin: auto;
+    padding: 1%;
+    font-weight: 700;
+}
+item link, item guid{
+    cursor: pointer;
+    color: dodgerblue;
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+item guid{
+    color: darkturquoise;
+}
+
+description{
+    width: 90%;
+    margin: 1% auto;
+    display: block;
+}
+item pubDate{
+ display: flex;
+    justify-content: flex-end;
+    color: darkgoldenrod;
+}
+item category{
+    padding: 1%;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+ display: flex;
+    list-style-type: decimal;
+cursor: pointer;
+}
+item category:hover{
+    background: black;
+    color: white;
+}
+
