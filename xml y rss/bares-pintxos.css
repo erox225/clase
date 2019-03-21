@@ -1,0 +1,17 @@
+rows{
+	display:block;
+	padding:1.3em;
+	margin:1.3em;
+	background-color:white;
+}
+
+row{
+display:block;
+margin:1%;
+padding:1%;
+border:2px solid black;}
+
+lonwgs84,municipality,municipalitycode,territory,territorycode,country,countrycode,friendlyurl,physicalurl,dataxml,metadataxml,zipfile, documentname,turismdescription,templatetype,locality,phone,address,marks,physical,visual,auditive,intellectual,organic,web,productclub,postalcode,buytype,latitudelongitude,latwgs84
+{
+display:block;
+}

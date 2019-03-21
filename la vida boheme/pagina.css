@@ -83,8 +83,9 @@ text-decoration: none;
 #tres {
     background: url(imagenes/wood_1.png);
 
-    height: 100%;
+    height: auto;
     width: 100%;
+    padding: 1%;
 
 }
 
