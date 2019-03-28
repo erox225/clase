@@ -20,10 +20,20 @@ html {
     width: 100%;
     display: flex;
 }
+   #menu-bar{
+        display: none;
+    }
 
+ header label{
+    font-size: 30px;
+    
+     height: 50px;
+    color: white;
+     float: right;
+    }
 #uno #centro {
     justify-content: center;
-    width: 90%;
+    width: 70%;
     margin: 8% auto;
 }
 
@@ -72,6 +82,7 @@ text-decoration: none;
 }
 
 #dos #canciones {
+    transition-duration: 3s, 5s;
     flex-wrap: wrap;
     display: flex;
     align-content: space-between;
@@ -83,7 +94,7 @@ text-decoration: none;
 #tres {
     background: url(imagenes/wood_1.png);
 
-    height: auto;
+    height: 100%;;
     width: 100%;
     padding: 1%;
 
@@ -102,7 +113,10 @@ text-decoration: none;
 /*++++++++++++++++++++++*/
 
 /*++++++++++++++++++++++*/
-header {
+@media (min-width: 768px){
+    
+   
+   header {
     list-style: none;
     font-family: 'Sniglet', cursive;
     background: rgba(0, 0, 0, 0.1);
@@ -143,7 +157,10 @@ i{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+} 
+    
 }
+
 
 /*++++++++++++++++++++++*/
 
@@ -186,4 +203,159 @@ i{
 
 }
 
+
+
 /*++++++++++++++++++++++*/
+
+/*********Media Queries*************/
+
+
+@media (min-width: 768px){
+
+    
+    
+}
+
+/*  Tablets en horizonal y escritorios normales*/
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    
+    #uno #centro {
+    justify-content: center;
+    width: 90%;
+    margin: 12% auto;
+}
+    #tercero > div{
+    transition:  0.7 ease;
+     transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    width: 50%;
+
+}
+    
+}
+
+
+
+/*  Móviles en vertical*/
+
+@media (max-width: 480px) { 
+
+#tercero > div{
+    display: block;
+    height: 45%;
+    width: 100%;
+    margin: 10% auto;
+
+}
+    #uno #centro img {
+    display: block;
+    margin: auto;
+    margin-bottom: 2%;
+    width: 80%;
+    height: 30%;
+}
+    
+    #uno #centro {
+    justify-content: center;
+    width: 100%;
+    margin: 12% auto;
+        height: 100%;
+}
+  #tercero > div{
+    display: block;
+    height: 9vh;
+    width: 70%;
+    margin: 2% auto;
+
+}  
+
+ }
+
+/* Móviles en horizontal o tablets en vertical*/
+
+@media (max-width: 767px) {
+    
+        #uno #centro img {
+    display: block;
+    margin: auto;
+    margin-bottom: 2%;
+    width: 90%;
+    height: 30%;
+}
+    
+#uno #centro p {
+    font-weight: 700;
+    font-size: 1.0em;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    color: rgb(255, 244, 227);
+    margin: auto;
+    width: 80%;
+    display: block;
+}
+
+    #uno #centro {
+    justify-content: center;
+    width: 100%;
+    margin: 8% auto;
+}
+    
+   #notengoheader{
+        display: none;
+    }    
+ 
+       header {
+    list-style: none;
+    font-family: 'Sniglet', cursive;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    }
+    
+    
+    #tercero{
+    
+    display: inline-block;
+ flex-wrap: wrap;
+    margin: 1% auto;
+    width: 49.4%;
+        height: 35vh;
+        justify-content:space-between;
+
+    
+}
+    
+    #nav {
+display: none;
+}
+
+#nav li a {
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(255, 244, 227);
+}
+
+#tercero > div{
+    display: block;
+    height: 45%;
+    width: 80%;
+    margin: 10% auto;
+
+}
+   #dos h2 {
+
+    padding-top: 50px;
+}    
+    
+       #tres h2 {
+
+    padding-top: 50px;
+} 
+    
+.back p{  display: none;
+}    
+    
+}

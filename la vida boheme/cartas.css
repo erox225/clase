@@ -1,10 +1,25 @@
 #tercero{
-    
+   
     display: flex;
     justify-content: space-between;
     margin: 1% auto;
     width: 75%;
     height: 30vh;
+    
+}
+
+
+@media (min-width: 768px){
+   #tercero >div:hover >.front{
+    
+    -webkit-transform:perspective(600px) rotateY(180deg);
+}
+
+#tercero >div:hover >.back{
+    
+   
+    -webkit-transform:perspective(600px) rotateY(0deg);
+} 
     
 }
 
@@ -17,16 +32,7 @@
 
 }
 
-#tercero >div:hover >.front{
-    
-    -webkit-transform:perspective(600px) rotateY(180deg);
-}
 
-#tercero >div:hover >.back{
-    
-   
-    -webkit-transform:perspective(600px) rotateY(0deg);
-}
 
 .front{
 -webkit-box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.87); 
@@ -143,3 +149,4 @@ box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.87);
    background: black;
     color:rgb(255, 244, 227);
 }
+

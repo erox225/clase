@@ -1,0 +1,156 @@
+1)----------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------Crear Cursor
+
+--------  DECLARE PROCTEN CURSOR FOR SELECT TOP 10 * FROM tblSchedule
+
+ --------------------------------------------------Crear Cursor
+
+--------------------------------------------------Ejecutar Cursor
+--------  DECLARE @ids As nvarchar(50)
+--------   DECLARE @fks As nvarchar(50)
+--------    DECLARE @date as nvarchar(50)
+--------	 DECLARE @trainersid as nvarchar(50) 
+--------	  DECLARE @resourcesid as nvarchar(50)
+--------	  OPEN PROCTEN
+--------	  FETCH NEXT FROM PROCTEN INTO @ids,@fks,@date,@trainersid,@resourcesid
+--------	  while @@FETCH_STATUS =0
+--------	  begin
+--------	   print @ids+' '+@fks+' '+@date+' '+@trainersid+' '+@resourcesid
+--------	  FETCH NEXT FROM PROCTEN INTO @ids, @fks,@date,@trainersid,@resourcesid
+--------	  end 
+--------	  close PROCTEN
+--------------------------------------------------Ejecutar Cursor
+
+
+2)----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------Crear Cursor
+--declare proctwo cursor for select Department,FirstName, LastName  from tblPerson 
+--group by Department,LastName,FirstName
+--order by FirstName,LastName desc
+--------------------------------------------------Crear Cursor
+
+
+--------------------------------------------------Ejecutar Cursor
+--DECLARE @Departamento as nvarchar(50)
+--declare @nombre as nvarchar(50)
+--declare @apellido as nvarchar(50)
+--open proctwo
+--FETCH NEXT FROM proctwo INTO @Departamento,@nombre,@apellido
+--while @@FETCH_STATUS =0
+--begin
+-- print @Departamento+' '+@nombre+' '+@apellido
+--FETCH NEXT FROM proctwo INTO @Departamento,@nombre,@apellido
+--end
+--close proctwo
+--------------------------------------------------Ejecutar Cursor
+
+3)----------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------Crear Cursor
+
+--declare procthree cursor for select Department from tblPerson 
+
+--------------------------------------------------Crear Cursor
+--------------------------------------------------Ejecutar Cursor
+--declare @numeritos_raros As int
+--open procthree
+--begin try
+--FETCH NEXT FROM proctwo INTO @numeritos_raros
+--while @@FETCH_STATUS =0
+--begin
+--		print @numeritos_raros
+--		FETCH NEXT FROM proctwo INTO @numeritos_raros
+--end
+--	end try
+
+--	begin catch
+--		print 'error al leer el numero'
+--	end catch
+--------------------------------------------------Ejecutar Cursor
+4)---------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------Crear Cursor
+
+declare proccinco_2 cursor for select  tblPerson.FirstName, SUM(tblDelegate.ScheduleId) AS SUMA from (tblDelegate inner join tblPerson on tblPerson.Personid = tblDelegate.PersonId) GROUP BY tblPerson.FirstName
+
+--------------------------------------------------Crear Cursor
+
+
+
+declare @nombre_2 as nvarchar(50)
+declare @SUMA as nvarchar(50)
+declare @dele as nvarchar(50)
+declare @person as nvarchar(50)
+open proccinco_2
+FETCH NEXT FROM proccinco_2 INTO @nombre_2,@SUMA
+while @@FETCH_STATUS =0
+begin
+ print @nombre_2+' '+@SUMA 
+FETCH NEXT FROM proccinco_2 INTO @nombre_2,@SUMA
+end
+close proccinco_2
+
+5)----------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------Crear Procedimiento
+create procedure spNames_8 @schedule_Id int
+as 
+DECLARE @N_1 NVARCHAR(500)
+DECLARE @N_2 nvarchar(50)
+DECLARE @count INT;
+
+
+SELECT distinct
+ STUFF(
+    (SELECT ', '  + tblPerson.LastName
+from (tblPerson inner join tblDelegate on tblPerson.Personid=tblDelegate.PersonId)
+    where tblDelegate.ScheduleId= 2
+    FOR XML PATH('')),
+    1, 2, '') As Categorias
+FROM  tblPerson
+--------------------------------------------------Crear Procedimiento
+
+--------------------------------------------------Crear Tablas
+create table #Schedules_4
+(
+schedule_id int , 
+Starts_Date date,
+course_name nvarchar(50),
+gente nvarchar(800)
+)
+go
+create table aux 
+(
+aux nvarchar(800)
+)
+
+--------------------------------------------------Crear Tablas
+
+--------------------------------------------------Crear Cursor
+declare cursor_sql_2
+ CURSOR
+  FOR SELECT tblSchedule.ScheduleId,tblSchedule.StartDate,tblCourse.CourseName
+  from tblCourse inner join tblSchedule
+   on tblCourse.CourseId = tblSchedule.CourseId
+
+--------------------------------------------------Crear Cursor
+
+
+--------------------------------------------------Ejecutar Cursor
+
+ declare @id int
+   declare @date date
+   declare @curso nvarchar(50)
+  declare  @gente nvarchar(800)
+
+   open cursor_sql_2
+  
+   fetch next from cursor_sql_2 into @id,@date,@curso
+   while @@FETCH_STATUS =0
+   begin 
+   insert into aux exec spNames_8 @schedule_Id=@id
+   insert into #Schedules_4 select @id,@date,@curso , aux.aux from aux
+   select * from #Schedules_4
+   fetch next from cursor_sql_2 into @id,@date,@curso
+   end
+   close cursor_sql_2
+
+--------------------------------------------------Ejecutar Cursor
