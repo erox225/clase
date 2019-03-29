@@ -19,7 +19,7 @@ public class menu extends javax.swing.JFrame {
      */
     public menu() {
         initComponents();
-        controlador_menu cont= new controlador_menu(jButton1,Polimorfismo,jButton2);
+        controlador_menu cont= new controlador_menu(jButton1,Polimorfismo,jButton2,jButton3);
   
     }
 
@@ -37,6 +37,7 @@ public class menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Polimorfismo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,6 +63,9 @@ public class menu extends javax.swing.JFrame {
 
         jButton2.setText("Ejercicio10");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 140, 40));
+
+        jButton3.setText("Juego Jueguil");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 190, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -111,6 +115,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JButton Polimorfismo;
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

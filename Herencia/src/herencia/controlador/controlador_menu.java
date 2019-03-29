@@ -15,7 +15,7 @@ import javax.swing.JButton;
  * @author Tarde
  */
 public class controlador_menu {
-  public  controlador_menu(JButton boton1,JButton polimorfismo,JButton boton2){
+  public  controlador_menu(JButton boton1,JButton polimorfismo,JButton boton2,JButton jButton3){
       boton1.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
           
@@ -46,6 +46,18 @@ public class controlador_menu {
       }
       
       
-  }); 
+  });
+                        
+                        
+                        
+                             jButton3.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+          
+          pasar_pagina pasar= new pasar_pagina(); 
+          pasar.to_juego();
+      }
+      
+      
+  });
 }
 }

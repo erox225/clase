@@ -2,6 +2,7 @@
 package herencia.controlador;
 
 import static herencia.main.aux;
+import herencia.vista.juego;
 import herencia.vista.menu;
 import herencia.vista.vista_ejercicio10;
 import herencia.vista.vista_herencia_interfaces;
@@ -37,5 +38,13 @@ public class pasar_pagina {
         pa.setVisible(true);
        
     }
+              
+             public void to_juego()     
+             {
+             juego pa=new  juego();
+             pa.setVisible(true);
+             }
+               
+             
     
 }
