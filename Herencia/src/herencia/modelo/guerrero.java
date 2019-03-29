@@ -14,6 +14,15 @@ protected String arma;
     public guerrero(String nombre, int energia,String arma) {
         super(nombre, energia);
         this.arma=arma;
+        this.identidad=2;
+    }
+
+    public String getArma() {
+        return arma;
+    }
+
+    public void setArma(String arma) {
+        this.arma = arma;
     }
     
     public double combatir(int energia)

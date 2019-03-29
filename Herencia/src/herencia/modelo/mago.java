@@ -14,9 +14,10 @@ protected int poder;
     public mago() {
     }
 
-    public mago(String nombre, int energia) {
+    public mago(String nombre, int energia ) {
         super(nombre, energia);
         this.poder=100;
+        this.identidad=1;
     }
     
     public double encantar(int energia)
