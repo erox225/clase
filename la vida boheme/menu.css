@@ -8,6 +8,7 @@ nav a{
     border-bottom: 1px solid rgb(255, 244, 227);
     
 }
+
 #nav {
 
  width: 60%;
@@ -186,4 +187,8 @@ div button{
     
 }
 }
+    
+    @media (max-width: 368px){
+    
+    }
 

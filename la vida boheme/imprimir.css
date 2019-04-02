@@ -1,0 +1,27 @@
+@media print {
+    
+    nav { display: none}
+ 
+
+    #centro  a {
+display: none;
+}
+
+    .card {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+.cardr:before {
+  opacity: 1;
+}
+.card .info {
+    color: yellow;
+
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+    .back{
+        display: none;
+    }   
+}

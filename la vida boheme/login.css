@@ -20,7 +20,7 @@ i{
     color: rgb(255, 244, 227);
 }
 nav a{
-   font-size: 40px;
+   font-size: 30px;
      font-family: 'Sniglet', cursive;
     color: rgb(255, 244, 227); 
 }
@@ -30,11 +30,11 @@ nav a{
     
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 40%;
     margin: 0% auto;
  padding: 2%;
     max-width: 500px;
-    min-width: 470px;
+    min-width: 400px;
     height: 80vh;
 }
 #login input {
@@ -42,7 +42,7 @@ nav a{
     font-size: 20px;
     padding: 2%;
     display: block;
-    width: 90%;
+    width: 70%;
     margin: 1% auto;
      color: rgb(255, 244, 227);
     border:none;
@@ -99,4 +99,16 @@ nav a{
    font-size: 40px;
    
     width: 100%;
+}
+@media (max-width: 480px) {
+
+    
+}
+@media (max-width: 330px)
+{
+nav a{
+   font-size: 20px;
+     font-family: 'Sniglet', cursive;
+    color: rgb(255, 244, 227); 
+}
 }
