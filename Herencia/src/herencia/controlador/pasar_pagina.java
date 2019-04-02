@@ -2,10 +2,14 @@
 package herencia.controlador;
 
 import static herencia.main.aux;
+import herencia.modelo.personaje;
+import herencia.vista.juego;
 import herencia.vista.menu;
+import herencia.vista.pelear;
 import herencia.vista.vista_ejercicio10;
 import herencia.vista.vista_herencia_interfaces;
 import herencia.vista.vista_polimorfismo;
+import java.util.ArrayList;
 
 
 public class pasar_pagina {
@@ -37,5 +41,17 @@ public class pasar_pagina {
         pa.setVisible(true);
        
     }
+              
+             public void to_juego()     
+             {
+             juego pa=new  juego();
+             pa.setVisible(true);
+             }
+               
+            public void to_pelear(ArrayList<personaje> grupo)
+            {
+            pelear pa=new pelear(grupo);
+            pa.setVisible(true);
+            }
     
 }
