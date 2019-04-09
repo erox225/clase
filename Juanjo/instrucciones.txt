@@ -1,0 +1,13 @@
+Observa la estructura del XML del censo.
+Contiene varias comunidades,
+Cada comunidad una o varias provincias
+Cada provincia uno o varios pueblos.
+
+Escribe Bizkaia.xslt que genere una tabla con los pueblos de Bizkaia y se vea la población total, los euros de deuda (multiplica por 1000) y los euros de deuda por habitante.
+
+Pruébalo en el servidor con Bizkaia.php.
+Si puedes, calcula la deuda de toda Bizkaia, su población total y la deuda por habitante.
+
+Investiga la función format-number a ver cómo te quedan los números.
+
+Investiga qué son los parámetros. Haz un parámetro prov que por defecto valga 48 y construye provincia.xsl
