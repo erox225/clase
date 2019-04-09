@@ -1,0 +1,6 @@
+raiz{display:table; }
+incidenciaGeolocalizada{display: table-row;}
+tipo,autonomia,carretera,causa,fechahora_ini,poblacion,provincia,nivel,pk_final,pk_inicial,sentido,nombre,latitud,longitud,matricula{
+  display: table-cell;
+  padding:2px;
+}

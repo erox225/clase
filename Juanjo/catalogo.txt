@@ -1,0 +1,7 @@
+Tenemos catalogo.xml con datos de una colección de cd's
+Además catalogo.xsl contiene reglas de transformación para convertir ese fichero en html.
+Podemos hacer tres cosas:
+1.-Desde el fichero de datos en XMLCopy seleccionamos XML->XSL Transformation, como no sabe qué reglas apicar al fichero nos pide seleccionar uno y lo transforma.
+2.-En XMLCopy, seleccionamos XML->Asociar->XSLT Stylesheet. Seleccionamos el fichero y nos escribe una nueva línea para vincular la hoja de transformación a los datos.
+Ahora podemos abrir el xml con un navegador
+3.-En el servidor podemos tomar un fichero de datos (posiblemente de internet) y un fichero de transformación y mezclar los dos

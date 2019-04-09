@@ -1,0 +1,26 @@
+raiz{
+	display:block;
+	padding:1.3em;
+	margin:1.3em;
+	background-color:yellow;
+}
+
+incidenciaGeolocalizada{
+	display:block;
+	border:1px solid black;
+	padding:2em;
+}
+
+tipo,autonomia,carretera,causa,fechahora_ini,poblacion,provincia,nivel,pk_final,pk_inicial,sentido,nombre,latitud,longitud{
+	display: block;
+}
+tipo:before{
+	content:"Tipo: ";
+	font-weight: bold;
+	font-size:120%;
+}
+
+
+matricula{
+	display: none;
+}
