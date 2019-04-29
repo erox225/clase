@@ -533,11 +533,86 @@ exec ejercicio7;
 
 --Ejercicio 9
 
---	Codifica un procedimiento que reciba como parámetros un número de departamento, un importe y un porcentaje; y que suba el salario a todos los empleados del departamento indicado en la llamada. La subida será el porcentaje o el importe que se indica en la llamada (el que sea más beneficioso para el empleado en cada caso).
+--	Codifica un procedimiento que reciba como parámetros un número de departamento, un importe y un porcentaje; y que suba el salario a todos los empleados del departamento indicado en la llamada.
+ --La subida será el porcentaje o el importe que se indica en la llamada (el que sea más beneficioso para el empleado en cada caso).
+ drop procedure sueldo_porcentaje_cantidad
+ create procedure sueldo_porcentaje_cantidad
+ @id_departamento int, @importe float, @porcentaje float
+as
+	declare @sueldo float, @subida float,@id int;
 
+	
+	declare sueldo_porcentaje_cantidad cursor for
+	SELECT EMPLE.EMP_NO,emple.salario FROM emple WHERE dept_no = @id_departamento; 
+	
+	open sueldo_porcentaje_cantidad
+		
+	 FETCH NEXT FROM sueldo_porcentaje_cantidad INTO @id,@sueldo
+	
+
+		WHILE (@@fetch_status = 0)
+		BEGIN
+			 if((@sueldo+@importe)>(@sueldo+(@sueldo*@porcentaje/100)))
+			 begin
+				set @subida = @sueldo+@importe;
+			 end
+			 else
+			 begin
+				set @subida = @sueldo+(@sueldo*@porcentaje/100);
+			 end
+
+
+				 update EMPLE set SALARIO = @subida  where EMPLE.DEPT_NO=@id_departamento and EMPLE.EMP_NO=@id;
+				 print 'el Empleado con el ID '+CAST(@id AS VARCHAR(5))+'  Tenìa antes un sueldo de: '+CAST(@sueldo AS VARCHAR(5))+' pero con el aumento su sueldo es de: '+CAST(@subida AS VARCHAR(10))
+
+			
+			FETCH NEXT FROM sueldo_porcentaje_cantidad INTO  @id,@sueldo
+		END
+		
+	 CLOSE sueldo_porcentaje_cantidad
+	DEALLOCATE sueldo_porcentaje_cantidad
+	
+go
+
+exec sueldo_porcentaje_cantidad @id_departamento=10, @importe=25.0, @porcentaje=2.5;
 --Ejercicio 10
 
---	Escribe un procedimiento que suba el sueldo de todos los empleados que ganen menos que el salario medio de su oficio. La subida será del 50 por 100 de la diferencia entre el salario del empleado y la media de su oficio. Se deberá hacer que la transacción no se quede a medias, y se gestionarán los posibles errores.
+--	Escribe un procedimiento que suba el sueldo de todos los empleados que ganen menos que el salario medio de su oficio.
+ --La subida será del 50 por 100 de la diferencia entre el salario del empleado y la media de su oficio. Se deberá hacer que la transacción no se quede a medias, y se gestionarán los posibles errores.
+
+ create procedure subir_salario_a_menos_favorecido
+as
+	declare @oficio varchar(65), @sueldo float, @subida float, @salarioOficio float, @id int;
+
+	
+	declare subir_salario_a_menos_favorecido cursor for
+
+	SELECT emple.OFICIO, emple.SALARIO, EMPLE.EMP_NO FROM emple 
+
+	open subir_salario_a_menos_favorecido
+		
+	 FETCH NEXT FROM subir_salario_a_menos_favorecido INTO  @oficio, @sueldo, @id
+
+		WHILE (@@fetch_status = 0)
+		BEGIN
+			--obtenemos el salario medio del oficio especificado
+			set @salarioOficio  = (SELECT AVG(salario)  FROM emple where EMPLE.OFICIO = @oficio);
+			
+			if(@sueldo<@salarioOficio )
+			begin
+				set @subida = ((@salarioOficio-@sueldo)*50/100)+@sueldo
+				update EMPLE set SALARIO = @subida  where EMPLE.EMP_NO = @id;
+				print 'el Empleado con el ID '+CAST(@id AS VARCHAR(5))+'  Tenìa antes un sueldo de: '+CAST(@sueldo AS VARCHAR(5))+' pero con el aumento su sueldo es de: '+CAST(@subida AS VARCHAR(10))
+			end
+
+			FETCH NEXT FROM subir_salario_a_menos_favorecido INTO  @oficio, @sueldo, @id
+		END
+		
+	 CLOSE subir_salario_a_menos_favorecido
+	DEALLOCATE subir_salario_a_menos_favorecido
+	
+go
+exec subir_salario_a_menos_favorecido
 
 --Ejercicio 11
 
