@@ -661,59 +661,59 @@ exec subir_salario_a_menos_favorecido
 --– 8 es la suma de todos los conceptos anteriores. 
 --El listado irá ordenado por Apellido.
 
---CREATE FUNCTION calcularTrienio(@fechaAlta date)  
---RETURNS int   
---AS   
+CREATE FUNCTION calcularTrienio(@fechaAlta date)  
+RETURNS int   
+AS   
 
---BEGIN  
---    DECLARE @trienios int;
---	--DATEDIFF(year, fecha1, fecha2) nos permite calcular la diferencia en años, u otros valores temporares, entre
---	-- 2 fechas, al dividir entre 3 obtenemos los trienios 
---	set @trienios = (SELECT DATEDIFF(year,@fechaAlta, SYSDATETIME())/3); 
+BEGIN  
+    DECLARE @trienios int;
+	--DATEDIFF(year, fecha1, fecha2) nos permite calcular la diferencia en años, u otros valores temporares, entre
+	-- 2 fechas, al dividir entre 3 obtenemos los trienios 
+	set @trienios = (SELECT DATEDIFF(year,@fechaAlta, SYSDATETIME())/3); 
 
---    RETURN (@trienios*50);  
---END; 
+    RETURN (@trienios*50);  
+END; 
 
 
---create proc getLiquidacion
---as
+create proc getLiquidacion
+as
 	
---	declare @apell varchar(65), @numEmp int, @oficio varchar(65), @salario float, @comision float, @numDept int, @fechaAlta date;
---	 declare @complRes float;
+	declare @apell varchar(65), @numEmp int, @oficio varchar(65), @salario float, @comision float, @numDept int, @fechaAlta date;
+	 declare @complRes float;
 
---	declare rsDatosEmpleados cursor for
+	declare rsDatosEmpleados cursor for
 
---	--Seleccionamos todos los datos, y si la comision es nula le asignamos un 0
---	SELECT apellido, emp_no, oficio, salario, isnull(comision,0) comision, dept_no, fecha_alt FROM emple ORDER BY apellido;
+	--Seleccionamos todos los datos, y si la comision es nula le asignamos un 0
+	SELECT apellido, emp_no, oficio, salario, isnull(comision,0) comision, dept_no, fecha_alt FROM emple ORDER BY apellido;
 
 	
---	open rsDatosEmpleados
+	open rsDatosEmpleados
 		
---	 FETCH NEXT FROM rsDatosEmpleados INTO  @apell, @numEmp, @oficio, @salario, @comision, @numDept, @fechaAlta
+	 FETCH NEXT FROM rsDatosEmpleados INTO  @apell, @numEmp, @oficio, @salario, @comision, @numDept, @fechaAlta
 
---		WHILE (@@fetch_status = 0)
---		BEGIN
+		WHILE (@@fetch_status = 0)
+		BEGIN
 
---			 -- Para obtener el numero de empleados que tiene a cargo cada empleado
---			set @complRes = (SELECT COUNT(*) FROM EMPLE WHERE DIR = @numEmp)
---			set @complRes = @complRes * 100;
+			 -- Para obtener el numero de empleados que tiene a cargo cada empleado
+			set @complRes = (SELECT COUNT(*) FROM EMPLE WHERE DIR = @numEmp)
+			set @complRes = @complRes * 100;
 			
---			print '	**********************************
---					Liquidación del empleado :'+@apell+' 
---					Dpto : '+cast(@numDept as varchar(65))+'
---					Oficio : '+@oficio+'
---					Salario : '+cast(@salario as varchar(65))+'
---					Trienios : '+cast(dbo.calcularTrienio(@fechaAlta) as varchar(65))+'
---					Comp. responsabilidad : '+cast(@complRes as varchar(65))+'
---					Comisión : '+cast(@comision as varchar(65))+'
---					**********************************
---					Total : '+ cast((@salario+@complRes+@comision+dbo.calcularTrienio(@fechaAlta)) as varchar(65))+'
---					**********************************'
+			print '	**********************************
+					Liquidación del empleado :'+@apell+' 
+					Dpto : '+cast(@numDept as varchar(65))+'
+					Oficio : '+@oficio+'
+					Salario : '+cast(@salario as varchar(65))+'
+					Trienios : '+cast(dbo.calcularTrienio(@fechaAlta) as varchar(65))+'
+					Comp. responsabilidad : '+cast(@complRes as varchar(65))+'
+					Comisión : '+cast(@comision as varchar(65))+'
+					**********************************
+					Total : '+ cast((@salario+@complRes+@comision+dbo.calcularTrienio(@fechaAlta)) as varchar(65))+'
+					**********************************'
 		
---			FETCH NEXT FROM rsDatosEmpleados INTO  @apell, @numEmp, @oficio, @salario, @comision, @numDept, @fechaAlta
---		END
+			FETCH NEXT FROM rsDatosEmpleados INTO  @apell, @numEmp, @oficio, @salario, @comision, @numDept, @fechaAlta
+		END
 		
---	 CLOSE rsDatosEmpleados
---	DEALLOCATE rsDatosEmpleados
+	 CLOSE rsDatosEmpleados
+	DEALLOCATE rsDatosEmpleados
 
---go
+go
